@@ -1,16 +1,40 @@
-import Paragraph from "./paragraph";
-import {Button} from "./button";
+import React from 'react';
+
+import {movies} from './movies';
+
+import MoviePreview from "./movie-preview";
+import MovieDetails from "./movie-details";
 
 function App() {
+	
+	const [currentMovie, setCurrentMovie] = React.useState(null);
+	
     return (
         <div>
-            <p>Hello World</p>
-            <Paragraph text={'Jasmine Rocks!'}/>
-            <Paragraph text={'Jeff Rocks!'}/>
-            <Paragraph text={'I love JavaScript too much!'}/>
-            <Paragraph text={'Super excited'}/>
-            <Button buttonText={'Click Me!'} onClickFunction={() => alert('You clicked this button!')}/>
-            <Button buttonText={'Click the other one'} onClickFunction={() => console.log('You clicked the second button.')}/>
+		
+			<h1>Movie Information</h1>
+			{
+				movies.map((movie) => {
+				return (
+					<MoviePreview
+					key = {movie.title}
+					movie={movie}
+					onClickFunction = {setCurrentMovie}
+					/>
+					)
+				})
+			}
+			
+			{
+				currentMovie ?
+					<MovieDetails currentMovie={currentMovie}/>
+					:
+					<p>No Movie Selected</p>
+			
+			}
+
+			
+
         </div>
     );
 }
