@@ -2,6 +2,48 @@
   text-align: center;
 }
 
+body{
+	background-color: gray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1{
+	text-align: center;
+}
+
+div{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	width: 80%;
+	flex-wrap: wrap;
+}
+
+#movieButtons {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+}
+
+button {
+	border: 1px solid black;
+	margin-bottom: 10px;
+	color: white;
+	font-weight: bold;
+	width: 30%;
+	height: 150px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+button:hover{
+	width: 40%;
+	height: 200px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

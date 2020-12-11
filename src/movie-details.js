@@ -10,7 +10,7 @@ const MovieDetails = (props) => {
 			<p>{currentMovie.releaseYear}</p>
 			<p>{currentMovie.description}</p>
 			<p>{currentMovie.categories.join(', ')}</p>
-			<img src = {currentMovie.posterUrl}/>
+			<img src = {currentMovie.posterUrl} alt = {"poster for " + currentMovie.title}/>
 		</div>
 	)
 	

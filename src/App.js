@@ -4,15 +4,18 @@ import {movies} from './movies';
 
 import MoviePreview from "./movie-preview";
 import MovieDetails from "./movie-details";
+import './App.css';
 
 function App() {
 	
 	const [currentMovie, setCurrentMovie] = React.useState(null);
 	
     return (
+		
         <div>
 		
 			<h1>Movie Information</h1>
+		<div id="movieButtons">
 			{
 				movies.map((movie) => {
 				return (
@@ -24,6 +27,7 @@ function App() {
 					)
 				})
 			}
+		</div>
 			
 			{
 				currentMovie ?
